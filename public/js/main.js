@@ -55,16 +55,6 @@ class Main {
                         jQuery('#table').append('</tr>');
                     });
                 });
-                
-                // usersRef.where('date', '>=', new Date(new Date().setHours(0, 0, 0, 0))).where('date', '<=', end).onSnapshot(function (querySnapshot) {
-                //     jQuery('#recode-button').empty();
-                //     if ( querySnapshot.size === 0 ){
-                //         jQuery('#recode-button').append('<button type="button" class="btn btn-primary btn-block btn-lg" onclick="main.onClick(main.useruid, \'出社\');">出社</button>');
-                //     }else if ( querySnapshot.size === 1 ){
-                //         jQuery('#recode-button').append('<button type="button" class="btn btn-primary btn-block btn-lg" onclick="main.onClick(main.useruid, \'退社\');">退社</button>');
-                //     }
-                // });
-
             } else {
                 window.location.href = 'index.html'
             }

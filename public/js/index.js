@@ -33,7 +33,7 @@ class Index {
         }
       },
       signInFlow: 'popup',
-      signInSuccessUrl: 'main.html',
+      signInSuccessUrl: 'top.html',
       signInOptions: [
         // サポートするプロバイダを指定
         firebase.auth.EmailAuthProvider.PROVIDER_ID,
