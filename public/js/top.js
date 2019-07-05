@@ -11,10 +11,29 @@ class Top {
         };
         firebase.initializeApp(config);
 
+        // Initialize Cloud Firestore through Firebase
+        var db = firebase.firestore();
+
+
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
-                jQuery('#nav_displayName').append(user.displayName);
-                jQuery('#qrcode').qrcode({width: 64, height: 64, text: user.displayName});
+                if(user.displayName !== null){
+                    db.collection("root").doc("user").collection("info").doc(user.uid ).set(
+                        {
+                            id : user.uid,
+                            name : user.displayName
+                        }
+                    );
+                }
+                
+
+                if(user.displayName !== null){
+                    jQuery('#nav_displayName').append(user.displayName);
+                }
+                jQuery('#qrcode').qrcode({width: 256, height: 256, text: user.uid});
+
+
+
             } else {
                 window.location.href = 'index.html'
             }
